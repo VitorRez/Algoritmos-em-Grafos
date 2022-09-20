@@ -18,7 +18,7 @@ for i in g.vs():
         else:
             if g.are_connected(i.index, j.index) == True:
                 dx.append(g.es.select(_source=i.index, _target=j.index)['weight'][0])
-                rx.append(int(j['name']))
+                rx.append(int(i['name']))
             else:
                 rx.append(0)
                 dx.append(10000000000.0)
@@ -27,12 +27,14 @@ for i in g.vs():
     rx = []
     dx = []
 
+print(rotas)
+
 for k in g.vs():
     for i in g.vs():
         for j in g.vs():
             if D[i.index][k.index] + D[k.index][j.index] < D[i.index][j.index]:
                 D[i.index][j.index] = D[i.index][k.index] + D[k.index][j.index]
-                rotas[i.index][j.index] = rotas[i.index][k.index]
+                rotas[i.index][j.index] = rotas[k.index][j.index]
                 
 
 print(D)
