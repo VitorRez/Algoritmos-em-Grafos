@@ -37,4 +37,3 @@ for k in g.vs():
 
 print(D)
 print(rotas)
-print("marcelo")
