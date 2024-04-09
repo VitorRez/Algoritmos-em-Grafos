@@ -11,7 +11,6 @@ taux = []
 
 Ti = g.vs
 Tj = g.vs
-cont = 1
 while len(F) < len(g.es):
     for i in Ti:
         valor = 100000000000
@@ -28,7 +27,15 @@ while len(F) < len(g.es):
         for k in taux:
             if k not in Ti:
                 Ti.append(k)
-        arestaaux = []
-        taux = []
 print(F)
+#A = [1, 2, 3, 4]
+#B = [2, 3, 4, 5]
+#C = []
+#C.extend(A)
+#for i in B:
+#    if i not in A:
+#        C.append(i)
+#print(C)
+#
+#print(F)
                 

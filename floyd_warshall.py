@@ -14,8 +14,8 @@ def floyd_warshall(g, D, rotas):
                 rx.append(0)
             else:
                 if g.are_connected(i.index, j.index) == True:
-                    dx.append(g.es.select(_source=i.index, _target=j.index)['weight'][0])
-                    rx.append(int(i['name']))
+                    dx.append(g.es.select(_source=i.index, _target=j.index)['fluxo'][0])
+                    rx.append(i.index)
                 else:
                     rx.append(0)
                     dx.append(10000000000.0)
